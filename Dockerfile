@@ -11,5 +11,5 @@ RUN tar xvf /tmp/tomcat.tar.gz --directory /tmp && \
     mv "/tmp/apache-tomcat-${TOMCAT_VERSION}" "$CATALINA_HOME" && \
     rm -f /tmp/tomcat.tar.gz
 EXPOSE 8080
-WORKDIR /usr/local/tomcat
-CMD /usr/local/tomcat/bin/catalina.sh run
+WORKDIR $CATALINA_HOME
+CMD bin/catalina.sh run
